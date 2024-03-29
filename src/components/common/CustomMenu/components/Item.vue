@@ -50,7 +50,7 @@ li {
 }
 
 li:hover {
-  background-color: rgb(185,190,194);
+  background-color: rgb(227, 231, 245);
   transition: all .2s;
 }
 </style>

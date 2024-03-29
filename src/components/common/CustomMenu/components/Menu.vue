@@ -139,18 +139,15 @@ export default {
 
 <style lang="scss" scoped>
 .menu-container {
-  width: 70px;
-  margin: 3px 0px 0px 5px;
-  padding: 0 10px;
+  width: 60px;
   color: #23262F;
   cursor: pointer;
-  border: #E6E8EC 2px solid;
   box-sizing: border-box;
   transition: border .2s;
   margin-left: 10px;
 
   .menu-button {
-    height: 20px;
+    height: 25px;
     text-align: center;
     span {
       user-select: none;
@@ -159,7 +156,8 @@ export default {
 }
 
 .menu-container:hover {
-  border: #23262F 2px solid;
+  background-color: rgb(227, 231, 245);
+  // border: #23262F 2px solid;
 }
 
 .menu-dropdown {
