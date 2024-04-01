@@ -9,6 +9,7 @@
   <div class="main-top">
     <div>
       <div class="left">
+        <img src="@/assets/logo.png">
         <span>中央空调集中管理平台</span>
       </div>
       <div class="right">
@@ -56,20 +57,25 @@ const windowClose = () => {
 <style lang="scss" scoped>
 .main-top {
   width: 100%;
+  height: 38px;
   background-color: $color-theme;
   -webkit-app-region: drag; //事件处可以禁用拖拽区域
   color: white;
 
   .left {
     float: left;
-    height: 38px;
+    height: 35px;
     line-height: 35px;
     padding-left: 15px;
-    font-size: 14px;
+    font-size: 13.5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    letter-spacing: 1px;
+
+    img {
+      margin-right: 15px;
+      width: 24px;
+    }
   }
 
   .right {

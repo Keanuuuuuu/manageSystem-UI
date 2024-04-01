@@ -35,57 +35,42 @@
         <Item :value="value4_1" :type="dialog">{{value4_1}}</Item>
       </template>
     </Menu>
-
-
-    <div id="switch">
-      <el-tooltip effect="dark" content="切换账号" placement="left-end">
-        <el-icon id="power" @click="logout">
-          <Switch />
-        </el-icon>
-      </el-tooltip>
-    </div>
   </div>
 </template>
 
-<script setup>
+<script>
 import Menu from './components/Menu.vue'
 import Item from './components/Item.vue'
-import { useIpcRenderer } from '@vueuse/electron';
-
-const Store = require('electron-store'); 
-const Estore = new Store();
-const ipcRenderer = useIpcRenderer();
-
-let routes="routes"
-let dialog="dialog"
-let changeInfoDialog="changeInfoDialog"
-let changePSW="changePSW"
-let menu1= "系统"
-let menu2= "视图"
-let menu3= "工具"
-let menu4= "帮助"
-let value1_1= "修改密码"
-let value1_2= "修改信息"
-let value1_3= "退出系统"
-let value1_4= "未读信息"
-let value2_1= "内机监控"
-let value2_2= "页面总览"
-let value2_3= "数据统计"
-let value3_1= "智能控制"
-let value3_2= "日志记载"
-let value3_3= "账号管理"
-let value3_4= "报警设置"
-let value4_1= "帮助"
-
-function logout() {
-  Estore.set('logindata', {
-    username: null,
-    password: null,
-  });
-  Estore.set('token', null);
-  Estore.set('recordPassword', false);
-  ipcRenderer.send('login-deny');
-}
+export default {
+  components: {
+    Menu,
+    Item
+  },
+  data() {
+    return {
+      routes:"routes",
+      dialog:"dialog",
+      changeInfoDialog:"changeInfoDialog",
+      changePSW:"changePSW",
+      menu1: "系统",
+      menu2: "视图",
+      menu3: "工具",
+      menu4: "帮助",
+      value1_1: "修改密码",  
+      value1_2: "修改信息",
+      value1_3: "退出系统",
+      value1_4: "未读信息",
+      value2_1: "内机监控",
+      value2_2: "页面总览",
+      value2_3: "数据统计",
+      value3_1: "智能控制",
+      value3_2: "日志记载",
+      value3_3: "账号管理",
+      value3_4: "报警设置",
+      value4_1: "帮助",
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -93,12 +78,14 @@ function logout() {
   position: relative;
   -webkit-app-region: no-drag;
   width: 100%;
+  height: 28px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  margin: 3px;
+
   width: 100%;
-    // background-color: rgb(231,238,243);
-    // border-bottom:2px solid rgb(217, 219, 223);
+    background-color: rgb(231,238,243);
+    border-bottom:2px solid rgb(217, 219, 223);
 }
 
 .custom-menu {
@@ -139,25 +126,5 @@ function logout() {
 
 .submenu-item:hover {
   background-color: white;
-}
-
-#switch {
-  position: absolute;
-  right: 0;
-
-  #power {
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    top: 3px;
-    right: 20px;
-    font-size: 17px;
-    width: 40px;
-    height: 25px;
-
-    &:hover {
-      color: red;
-    }
-  }
 }
 </style>

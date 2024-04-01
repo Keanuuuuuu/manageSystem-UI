@@ -320,8 +320,11 @@ const options_tree = reactive({
 
 <style lang="scss" scoped>
 .tree {
-    border-right: 1px solid black;
+    border: 1px dashed black;
+    border: 1px dashed black;
+    box-shadow: 5px 0px 4px rgba($color: #000000, $alpha: 0.1);
     box-sizing: border-box;
+    margin-right: 5px;
     width: 210px;
 }
 
